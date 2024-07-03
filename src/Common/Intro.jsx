@@ -1,4 +1,7 @@
 import { useSpring, animated } from '@react-spring/web';
+import videoBG from '../assets/FONDOS/underwatwer.mp4';
+import './Intro.css'; 
+import backgroundIMG from '../assets/FONDOS/beautiful-seaside-landscape1.jpg';
 
 const Intro = () => {
   const props = useSpring({
@@ -9,18 +12,21 @@ const Intro = () => {
   });
 
   return (
-    <section id="intro" className="p-8 bg-blue-medium-dark text-white flex justify-center items-center flex-col min-h-screen">
-      <animated.div style={props} className="w-2/4 flex justify-center items-center flex-col text-center">
-        <h2 className="text-2xl font-bold mb-4">Propuesta Solución</h2>
+    <section id="intro" className="relative flex justify-center items-center flex-col min-h-screen bg-cover text-white" style={{ backgroundImage: `url(${backgroundIMG})` }}>
+      <div className="content z-20 mb-20">
+        <div className="drop-container">
+          <h1 className="text-6xl font-bold animated-title" id="intro-h1">Propuesta Solución</h1>
+          <div className="drop"></div>
+        </div>
+      </div>
+      <animated.div style={{...props, backdropFilter: 'blur(10px)'}} className="w-2/4 flex justify-center items-center flex-col text-center bg-opacity-30 bg-black rounded-md p-8">
         <p className="mb-4">
-          Nuestra propuesta se compone de dos partes: una solución de infraestructura y una solución de software. Ambas buscan abordar diferentes aspectos de los desafíos relacionados con el agua.
+        Nuestra propuesta se divide en dos componentes principales que trabajan en conjunto para lograr un sistema eficiente y sostenible.
         </p>
-        <p className="mb-4">
-          La <strong>solución de infraestructura</strong> se centra en la desalinización de agua marina utilizando energía solar.
-        </p>
-        <p className="mb-4">
-          La <strong>solución de software</strong> se basa en la inteligencia artificial predictiva para el control y la detección de la contaminación del agua.
-        </p>
+        <ul className="mb-4">
+          <li>Desalinización de Agua Marina</li>
+          <li>Sistema de boyas Inteligentes</li>
+        </ul>
         <p>
           Juntas, estas soluciones abordan tanto la necesidad de nuevas fuentes de agua dulce como la protección de los recursos hídricos existentes.
         </p>

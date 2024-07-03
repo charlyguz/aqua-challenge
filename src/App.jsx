@@ -1,10 +1,10 @@
 import Header from './Common/Header'
 import Intro from './Common/Intro'
-import InfrastructureSolution from './Common/InfrastructureSolution';
-import SoftwareSolution from './Common/SoftwareSolution';
-import Justification from './Common/Justification';
-import Evaluation from './Common/Evaluation';
+import Process from './Common/Process';
+import Cost from './Common/Cost';
 import Footer from './Common/Footer';
+import Diferenciador from './Common/Diferenciador';
+import Details from './Details/Details';
 
 function App() {
   return (
@@ -12,10 +12,10 @@ function App() {
       <Header />
       <main>
         <Intro />
-        <InfrastructureSolution />
-        <SoftwareSolution />
-        <Justification />
-        <Evaluation />
+        <Process />
+        <Details />
+        <Diferenciador />
+        <Cost />
       </main>
       <Footer />
     </>

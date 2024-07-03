@@ -22,13 +22,13 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="justification" smooth={true} duration={500} className="hover:text-blue-light cursor-pointer">
-              Justificación
+            <Link to="Diferenciador" smooth={true} duration={500} className="hover:text-blue-light cursor-pointer">
+            Diferenciador
             </Link>
           </li>
           <li>
-            <Link to="evaluation" smooth={true} duration={500} className="hover:text-blue-light cursor-pointer">
-              Evaluación
+            <Link to="Cost" smooth={true} duration={500} className="hover:text-blue-light cursor-pointer">
+            Cost
             </Link>
           </li>
         </ul>
