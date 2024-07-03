@@ -27,8 +27,8 @@ const Diferenciador = () => {
   return (
     <section id="diferenciador" className="p-8 bg-blue-medium-dark text-white min-h-screen flex flex-col items-center justify-center">
       <div className="flex items-center flex-col m-10 w-3/4 ">
-        <animated.h2 style={fadeIn1} ref={ref1} className="text-2xl font-bold mb-4">
-          Ventajas del Sistema con Heliostatos y Boyas Inteligentes
+        <animated.h2 style={fadeIn1} ref={ref1} className="text-3xl font-bold mb-4 text-emerald-500">
+          Diferenciador y Ventajas del Sistema
         </animated.h2>
         <animated.div style={fadeIn2} ref={ref2} className="flex flex-col items-center">
           <ul className="list-disc list-inside mb-8 text-lg">
@@ -119,7 +119,7 @@ const Diferenciador = () => {
               <td className="p-4 border border-white">Costo de Implementación</td>
               <td className="p-4 border border-white bg-yellow-200 text-yellow-900">Moderado (uso de energía solar y materiales específicos)</td>
               <td className="p-4 border border-white bg-red-200 text-red-900">Alto (equipos y mantenimiento costoso)</td>
-              <td className="p-4 border border-white bg-red-200 text-red-900">Muy alto (infraestructura y operación costosa)</td>
+              <td className="p-4 border border-white bg-red-400 text-red-900">Muy alto (infraestructura y operación costosa)</td>
             </tr>
             <tr>
               <td className="p-4 border border-white">Ahorro de Energía</td>
@@ -129,6 +129,28 @@ const Diferenciador = () => {
             </tr>
           </tbody>
         </table>
+
+        <div  className=" flex flex-col items-center bg-opacity-30 bg-black rounded-md p-8 text-white mt-10">
+          <h2 className="text-2xl font-bold mb-4">¿A quien va dirigido el proyecto?</h2>
+          <p className="text-lg mb-4">
+            <ul className="list-disc list-inside mb-4">
+              <li><strong className='text-blue-300' >Comunidades:</strong>  El sistema de Desalinización puede ser ocupado en comunidades o <strong>regiones donde haya escasez de agua y necesidades de desalinización</strong>, permitiendo asegurar suministros de agua potable.            </li>
+              <li><strong className='text-blue-300' >Empresas y organizaciones costeras:</strong> Empresas que <strong>dependan del agua para sus operaciones</strong> pueden beneficiarse de un suministro más confiable y sostenible de agua desalinizada. Aligerando la carga de otras fuentes de agua como la extraccion de agua subterranea.</li>
+              <li><strong className='text-blue-300' >Organizaciones Ambientales:</strong> Organizaciones que se dedican a la <strong>conservación marina y la protección del medio ambiente</strong> podrían ser usuarios de las boyas inteligentes para monitorear la calidad del agua y detectar contaminantes.</li>
+            </ul>
+          </p>
+        </div>
+
+        <div  className=" flex flex-col items-center bg-opacity-30 bg-black rounded-md p-8 text-white mt-10">
+          <h2 className="text-2xl font-bold mb-4">Posibles Alianzas</h2>
+          <p className="text-lg mb-4">
+            <ul className="list-disc list-inside mb-4">
+              <li><strong className='text-blue-300' >eForcis:</strong> eForcis es un proyecto independiente que utiliza la energía cinética de las olas marinas para generar electricidad. Esta tecnología podría ser una fuente de energía complementaria para nuestras boyas inteligentes.  </li>
+              <li><strong className='text-blue-300' >CONAGUA:</strong> La Comisión Nacional del Agua (CONAGUA) tiene como función administrar y preservar las aguas del país con el objetivo de garantizar el uso sostenible de este recurso natural y sus bienes públicos inherentes.  </li>
+
+            </ul>
+          </p>
+        </div>
         
       </div>
       

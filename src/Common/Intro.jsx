@@ -20,14 +20,19 @@ const Intro = () => {
         </div>
       </div>
       <animated.div style={{...props, backdropFilter: 'blur(10px)'}} className="w-2/4 flex justify-center items-center flex-col text-center bg-opacity-30 bg-black rounded-md p-8">
-        <p className="mb-4">
-        Nuestra propuesta se divide en dos componentes principales que trabajan en conjunto para lograr un sistema eficiente y sostenible.
+        <p className="mb-4 text-lg ">
+        Nuestra solución aborda dos desafíos críticos globales:<strong> la escasez de agua dulce y la necesidad de métodos sostenibles de desalinización.</strong>
+        </p>
+        <p className="mb-4 text-lg">
+        La propuesta se divide en dos componentes principales que trabajan en conjunto para lograr un sistema eficiente y sostenible.
         </p>
         <ul className="mb-4">
-          <li>Desalinización de Agua Marina</li>
-          <li>Sistema de boyas Inteligentes</li>
+          <strong>
+            <li>Desalinización de Agua Marina</li>
+            <li>Sistema de boyas Inteligentes</li>
+          </strong>
         </ul>
-        <p>
+        <p className='text-lg' >
           Juntas, estas soluciones abordan tanto la necesidad de nuevas fuentes de agua dulce como la protección de los recursos hídricos existentes.
         </p>
       </animated.div>

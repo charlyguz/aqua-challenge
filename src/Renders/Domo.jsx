@@ -1,27 +1,44 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Suspense, useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 const Model = () => {
-    const { scene } = useGLTF('/../public/MODELOS 3D/test2.gltf'); // Ajusta la ruta aquí si es necesario
-    return <primitive object={scene} scale={1} />;
-};
+    const { scene } = useGLTF('/../public/Test/Dome.glb');
+    const ref = useRef();
+    
+    useFrame(() => {
+        ref.current.rotation.y += 0.001; // Ajusta la velocidad de rotación según sea necesario
+    });
 
+    return <primitive ref={ref} object={scene} scale={1} />;
+};;
 
-const Domo = () => { 
+const Domo = () => {
+    const orbitControls = useRef();
+
     return (
         <Canvas
-        camera={{ position: [-2, 3, 6], fov: 50 }}
-        style={{ width: '100%', height: '100%' }}
-    >
-        <ambientLight intensity={1} />
-        <directionalLight position={[10, 10, 10]} intensity={1.5} />
-        <Suspense fallback={null}>
-            <Model />
-        </Suspense>
-        <OrbitControls />
-    </Canvas>
+            camera={{ position: [30, 10, 0], fov:34 }}
+            style={{ width: '100%', height: '100%' }}
+        >
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={1.5} />
+            <Suspense fallback={null}>
+                <Model />
+            </Suspense>
+            <OrbitControls
+                ref={orbitControls}
+                target={[0, 2, 0]}
+                enableDamping
+                dampingFactor={0.25}
+                rotateSpeed={0.1}
+                enableZoom={true}
+                enablePan={false}
+                minDistance={3}
+                maxDistance={10}
+            />
+        </Canvas>
     );
-}
+};
 
 export default Domo;

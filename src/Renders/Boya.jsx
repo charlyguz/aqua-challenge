@@ -1,16 +1,24 @@
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { Suspense, useRef, useState } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 const Model = () => {
     const { scene } = useGLTF('/../public/Test/boya.glb'); // Ajusta la ruta aquí si es necesario
-    return <primitive object={scene} scale={1} />;
+    const ref = useRef();
+
+    useFrame(() => {
+        ref.current.rotation.y += 0.001; // Ajusta la velocidad de rotación según sea necesario
+    });
+
+    return <primitive ref={ref} object={scene} scale={1} />;
 };
 
 const Boya = () => {
+    const orbitControls = useRef();
+
     return (
         <Canvas
-            camera={{ position: [10, 0, -2], fov: 20 }} // Ajuste de la cámara para una mejor visualización
+            camera={{ position: [30, 10, 0], fov: 25 }}
             style={{ width: '100%', height: '100%' }}
         >
             <ambientLight intensity={1} />
@@ -18,7 +26,17 @@ const Boya = () => {
             <Suspense fallback={null}>
                 <Model />
             </Suspense>
-            <OrbitControls />
+            <OrbitControls
+                ref={orbitControls}
+                target={[0, 0, 0.5]}
+                enableDamping
+                dampingFactor={0.25}
+                rotateSpeed={0.1}
+                enableZoom={true}
+                enablePan={false}
+                minDistance={3}
+                maxDistance={10}
+            />
         </Canvas>
     );
 };
