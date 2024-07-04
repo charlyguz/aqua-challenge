@@ -3,7 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 
 const Model = () => {
-    const { scene } = useGLTF('/../public/MODELOS 3D/test2.gltf');
+    const { scene } = useGLTF('/../public/MODELOS 3D/test.glb');
     const ref = useRef();
 
     useFrame(() => {
